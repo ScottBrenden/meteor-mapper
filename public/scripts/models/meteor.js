@@ -19,7 +19,7 @@ return $.ajax({
     "$$app_token" : ""
   }
 }).done(function(data) {
- Meteor.loadAll(data);
+  data.map(ele => Meteor.all.push(new Meteor(ele)));
 });
 };
 //
