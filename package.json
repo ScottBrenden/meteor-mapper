@@ -1,0 +1,25 @@
+{
+  "name": "meteor-mapper",
+  "version": "1.0.0",
+  "description": "map of meteor landings",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pg": "^6.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScottBrenden/meteor-mapper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ScottBrenden/meteor-mapper/issues"
+  },
+  "homepage": "https://github.com/ScottBrenden/meteor-mapper#readme"
+}
