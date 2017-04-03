@@ -2,7 +2,10 @@
   'use strict';
 
 //This pulls the google maps API.
+(function(module){
   function initMap() {
+    // Meteor.fetchAll();
+    // console.log(Meteor.all);
     var stylesArray = [
       {
         featureType: "all",
@@ -28,7 +31,7 @@
       }
     ];
 
-    var mapOptions = {
+    let mapOptions = {
       zoom: 15,
       styles: stylesArray,
       center: new google.maps.LatLng(47.618217, -122.351832),
@@ -51,13 +54,24 @@
       google.maps.event.trigger(map, 'resize');
       map.setCenter(center);
     });
-
-    var marker = new google.maps.Marker({
-      position: uluru,
+    // var marker = new google.maps.Marker({
+    //   position: uluru,
+    //   map: map
+    // });
+    let locations = Meteor.all.map(e => {
+      e.reclat = parseInt(e.reclat);
+      e.reclong = parseInt(e.reclong);
+      let newPosition = {lat: e.reclat, lng: e.reclong};
+      new google.maps.Marker({
+      position: newPosition,
       map: map
     });
+  });
   }
-
+  module.initMap = initMap;
+})(window);
+// function renderMarkers(){
+// }
   // module.map = map;
 
 // })(window);

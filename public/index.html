@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Meteor Mapper</title>
+    <link rel="icon" href="images/meteor-impact.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/icons.css">
@@ -24,12 +25,11 @@
     <h1>Meteor Mapper</h1>
 
     <div id="map"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&callback=initMap"
-    async defer></script>
     <script src="/scripts/models/map.js"></script>
-    <button id= "chart">Chart Data</button>
 
-
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY"
+    ></script>
+    <button id="chart">Chart Data</button>
 
 
     <section id="about" class="page"></section>
@@ -40,11 +40,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
     <script src="scripts/models/meteor.js"></script>
-    <script src="scripts/models/map.js"></script>
     <script src="scripts/views/mapView.js"></script>
     <script src="scripts/controllers/mapController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
     <script src="scripts/views/aboutUsData.js"></script>
     <script src="scripts/views/aboutView.js"></script>
+    <script type="text/javascript">
+      Meteor.fetchAll(initMap);
+    </script>
   </body>
 </html>

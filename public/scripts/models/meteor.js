@@ -6,11 +6,11 @@ function Meteor(opts) {
 }
 Meteor.all = [];
 
-Meteor.loadAll = rows => {
-  rows.map(ele => Meteor.all.push(new Meteor(ele)));
+Meteor.loadAll = data => {
+  data.map(ele => Meteor.all.push(new Meteor(ele)));
 };
 
-Meteor.fetchAll = () => {
+Meteor.fetchAll = (callback) => {
 return $.ajax({
   url: "https://data.nasa.gov/resource/y77d-th95.json",
   type: "GET",
@@ -23,8 +23,9 @@ return $.ajax({
   //console.log(data);
  //(data.map((e) => e.name);
  Meteor.loadAll(data);
+ callback();
 });
 };
-
-Meteor.fetchAll();
-console.log(Meteor.all);
+//
+// Meteor.fetchAll();
+// console.log(Meteor.all);
