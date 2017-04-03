@@ -1,5 +1,6 @@
 'use strict';
 
+
 function Meteor(opts) {
   Object.keys(opts).forEach(e => this[e] = opts[e]);
 }
