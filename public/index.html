@@ -4,21 +4,40 @@
     <meta charset="utf-8">
     <title>Meteor Mapper</title>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
-<link rel="stylesheet" href="styles/icons.css">
-<link rel="stylesheet" href="styles/base.css">
-<link rel="stylesheet" href="styles/layout.css">
-<link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <script id="about-template" type="text/x-handlebars-template">
+      <article>
+        <header class="name">
+          <h1>{{{name}}}</h1>
+        </header>
+        <section class="about-us">{{{about}}}</section>
+      </article>
+    </script>
+
   </head>
   <body>
     <p>Hello world!</p>
+
+    
+    <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+    <section id="about" class="page"></section>
+    
     
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="/vendor/scripts/handlebars.js"></script>
-    <script src="/scripts/models/meteor.js"></script>
-    <script src="/scripts/models/map.js"></script>
-    <script src="/scripts/views/mapView.js"></script>
-    <script src="/scripts/controllers/mapController.js"></script>
-    <script src="/scripts/controllers/routes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="vendor/scripts/handlebars.js"></script>
+    <script src="scripts/models/meteor.js"></script>
+    <script src="scripts/models/map.js"></script>
+    <script src="scripts/views/mapView.js"></script>
+    <script src="scripts/controllers/mapController.js"></script>
+    <script src="scripts/controllers/routes.js"></script>
+    <script src="scripts/views/aboutUsData.js"></script>
+    <script src="scripts/views/aboutView.js"></script>
   </body>
 </html>
