@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Meteor Mapper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="vendor/styles/normalize.css">
 <link rel="stylesheet" href="styles/icons.css">
 <link rel="stylesheet" href="styles/base.css">
@@ -10,12 +11,16 @@
 <link rel="stylesheet" href="styles/modules.css">
   </head>
   <body>
-    <p>Hello world!</p>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&callback=initMap"
+    async defer></script>
+    <script src="/scripts/models/map.js"></script>
 
+    <p>Hello world!</p>
+    <script src="scripts/tokens.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="/vendor/scripts/handlebars.js"></script>
     <script src="/scripts/models/meteor.js"></script>
-    <script src="/scripts/models/map.js"></script>
     <script src="/scripts/views/mapView.js"></script>
     <script src="/scripts/controllers/mapController.js"></script>
     <script src="/scripts/controllers/routes.js"></script>
