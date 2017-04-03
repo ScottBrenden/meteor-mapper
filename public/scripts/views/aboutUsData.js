@@ -1,6 +1,6 @@
 'use srtict';
 
-let aboutUsData = [
+const aboutUsData = [
   {
     name:'Kayla',
     about:'blah blah blah',

@@ -24,17 +24,19 @@
     <h1>Meteor Mapper</h1>
 
     <div id="map"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&callback=initMap"
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&callback=initMap"
+    async defer></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY"
     async defer></script>
     <script src="/scripts/models/map.js"></script>
     <p>Hello world!</p>
 
 
- 
+
 
     <section id="about" class="page"></section>
-    
-    
+
+
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
@@ -46,5 +48,8 @@
     <script src="scripts/controllers/routes.js"></script>
     <script src="scripts/views/aboutUsData.js"></script>
     <script src="scripts/views/aboutView.js"></script>
+    <script type="text/javascript">
+      Meteor.fetchAll(initMap);
+    </script>
   </body>
 </html>
