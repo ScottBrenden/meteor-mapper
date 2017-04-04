@@ -9,6 +9,8 @@ const app = express();
 //const conString = 'postgres://postgres:potatobabe@localhost:5432/meteors';
 //const conString = 'postgres://postgres:1234@localhost:5432/meteors';
 //const conString = 'postgres://postgres:flight19@localhost:5432/meteors';
+const conString = 'postgres://postgres:hofbrau@localhost:5432/meteors';
+
 const client = new pg.Client(conString);
 
 client.connect();
