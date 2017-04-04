@@ -10,13 +10,16 @@ Meteor.loadAll = data => {
 };
 
 Meteor.fetchAll = callback => {
+  console.log(callback);
   $.get('/meteors')
-  .then(
-    results => {
+  .then(results => {
       Meteor.loadAll(results);
-      callback();
-    }
-  )
+    })
+  .then(() => {
+    console.log('IS THERE AUTOCOMPLETE HERE?', window.autoComplete.initMap);
+    autoComplete.initMap();
+    callback();
+  })
 };
 Meteor.findWhere = (field, value, callback) => {
   $.get('/meteors/find', {field: field, val: value})
