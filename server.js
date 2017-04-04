@@ -55,3 +55,11 @@ function loadDB(){
     )`
   )/*.then(loadMeteors)*/.catch(console.error);
 }
+
+app.get('/meteors', (request, response) => {
+  client.query(`
+    SELECT * FROM meteors;
+    `)
+    .then(result => response.send(result.rows))
+    .catch(console.error);
+});
