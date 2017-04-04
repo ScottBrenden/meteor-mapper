@@ -6,7 +6,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
- const conString = 'postgres://postgres:flight19@localhost:5432/meteors';
+const conString = 'postgres://postgres:flight19@localhost:5432/meteors';
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', function(error) {
