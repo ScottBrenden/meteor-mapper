@@ -55,6 +55,13 @@
       map.setCenter(center);
     });
 
+    let iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    let icons = {
+      meteors: {
+        icon: iconBase + 'meteor-impact.png'
+      }
+    }
+
     let features = Meteor.all.map(met => {
       // mLat = parseFloat(meteor.reclat);
       // mLong = parseFloat(meteor.reclong);
