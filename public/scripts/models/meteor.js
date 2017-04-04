@@ -14,12 +14,12 @@ Meteor.fetchAll = callback => {
   $.get('/meteors')
   .then(results => {
       Meteor.loadAll(results);
+      callback();
     })
-  .then(() => {
-    console.log('IS THERE AUTOCOMPLETE HERE?', window.autoComplete.initMap);
-    autoComplete.initMap();
-    callback();
-  })
+  // .then(() => {
+  //   console.log('IS THERE AUTOCOMPLETE HERE?', window.autoComplete.initMap);
+  //   autoComplete.initMap();
+  // })
 };
 Meteor.findWhere = (field, value, callback) => {
   $.get('/meteors/find', {field: field, val: value})
