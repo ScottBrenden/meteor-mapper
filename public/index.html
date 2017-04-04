@@ -24,6 +24,23 @@
 
     <h1>Meteor Mapper</h1>
 
+    <section id="map-filters" class="tab-content">
+      <div>
+        <ul id="filters">
+          <li>
+            <select id="filter-one">
+              <option value="">-- Filter by Year --</option>
+            </select>
+          </li>
+          <li>
+            <select id="filter-two">
+              <option value="">-- Filter by State --</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <div id="map"></div>
     <script src="scripts/models/map.js"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY"

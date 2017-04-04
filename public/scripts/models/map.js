@@ -5,7 +5,7 @@
 (function(module){
   function initMap() {
     // Meteor.fetchAll();
-    // console.log(Meteor.all);
+
     var stylesArray = [
       {
         featureType: "all",
@@ -59,8 +59,8 @@
     //   map: map
     // });
     let locations = Meteor.all.map(e => {
-      e.reclat = parseInt(e.reclat);
-      e.reclong = parseInt(e.reclong);
+      e.reclat = parseFloat(e.reclat);
+      e.reclong = parseFloat(e.reclong);
       let newPosition = {lat: e.reclat, lng: e.reclong};
       new google.maps.Marker({
       position: newPosition,
