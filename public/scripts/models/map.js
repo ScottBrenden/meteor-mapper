@@ -50,7 +50,7 @@
     });
 
     //add custom icons
-    var iconBase = 'images/test-meteor-icon.png'
+    var iconBase = 'images/test-meteor-icon.png';
 
     google.maps.event.addDomListener(window, 'resize', function() {
       var center = map.getCenter();
