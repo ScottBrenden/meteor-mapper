@@ -9,18 +9,20 @@ Meteor.loadAll = data => {
   data.map(ele => Meteor.all.push(new Meteor(ele)));
 };
 
-Meteor.fetchAll = callback => {
-  console.log(callback);
+Meteor.fetchAll = function() {
   $.get('/meteors')
   .then(results => {
       Meteor.loadAll(results);
     })
-  .then(() => {
-    console.log('IS THERE AUTOCOMPLETE HERE?', window.autoComplete.initMap);
-    autoComplete.initMap();
-    callback();
-  })
-};
+  };
+  // .then();
+    // console.log(autoComplete.initMap);
+    // console.log('line 19');
+    // //autoComplete.initMap();
+    // // callback &&
+    // callback();
+
+
 Meteor.findWhere = (field, value, callback) => {
   $.get('/meteors/find', {field: field, val: value})
   .then(callback)

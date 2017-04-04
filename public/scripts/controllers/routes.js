@@ -1,3 +1,7 @@
 'use strict';
-page('/', Meteor.fetchAll(initMap));
+
+
+console.log(autoComplete);
+
+page('/', Meteor.fetchAll());
 page();
