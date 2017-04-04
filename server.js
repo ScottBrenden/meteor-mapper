@@ -27,6 +27,7 @@ request.get(nasaURL)
 .then(res => {
 //  console.log(res.body[0]);
   nasaData = res.body;
+  console.log(res.body.length);
   //console.log(nasaData);
   nasaData.map(ele => {
     //console.log(ele);

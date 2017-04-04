@@ -22,6 +22,7 @@ return $.ajax({
 //console.log("Retrieved " + data.length + " records from the dataset!");
   //console.log(data);
  //(data.map((e) => e.name);
+ console.log(Meteor.all.length);
  Meteor.loadAll(data);
  callback();
 });
