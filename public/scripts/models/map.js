@@ -1,3 +1,4 @@
+
 'use strict';
 
 function initMap() {
@@ -11,5 +12,13 @@ let locations = Meteor.all.map(e => {
   new google.maps.Marker({
   position: newPosition,
   map: map
+
     });
+      let infowindow = new google.maps.InfoWindow({
+        content: e.name
+      });
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      })
   });
+
