@@ -50,7 +50,12 @@
     });
 
     //add custom icons
-    var iconBase = 'images/test-meteor-icon.png';
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    let icons = {
+      meteors: {
+          icon: iconBase + 'images/test-meteor-icon.png'
+      }
+    };
 
     google.maps.event.addDomListener(window, 'resize', function() {
       var center = map.getCenter();
@@ -67,7 +72,8 @@
       let newPosition = {lat: e.reclat, lng: e.reclong};
       new google.maps.Marker({
       position: newPosition,
-      map: map
+      map: map,
+      type: 'meteors'
     });
   });
   }
