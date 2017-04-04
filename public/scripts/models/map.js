@@ -5,7 +5,7 @@
 (function(module){
   function initMap() {
     // Meteor.fetchAll();
-    // console.log(Meteor.all);
+
     var stylesArray = [
       {
         featureType: "all",
@@ -62,11 +62,19 @@
       e.reclat = parseFloat(e.reclat);
       e.reclong = parseFloat(e.reclong);
       let newPosition = {lat: e.reclat, lng: e.reclong};
-      new google.maps.Marker({
+      let marker = new google.maps.Marker({
       position: newPosition,
       map: map
     });
+      let infowindow = new google.maps.InfoWindow({
+        content: e.name
+      });
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      })
   });
+
+
   }
   module.initMap = initMap;
 })(window);

@@ -5,12 +5,16 @@ const fs = require('fs');
 const express = require('express');
 const PORT = process.env.PORT || 8000;
 const app = express();
+
 const request = require('superagent');
 const nasaURL = 'https://data.nasa.gov/resource/y77d-th95.json';
-//
+//const conString = 'postgres://postgres:potatobabe@localhost:5432/meteors';
+//const conString = 'postgres://postgres:1234@localhost:5432/meteors';
+//const conString = 'postgres://postgres:flight19@localhost:5432/meteors';
 const conString = 'postgres://postgres:1234@localhost:5432/meteors';
 const client = new pg.Client(conString);
 let nasaData = [];
+
 client.connect();
 client.on('error', function(error) {
   console.error(error);
