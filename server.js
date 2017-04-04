@@ -25,12 +25,8 @@ app.get('/', (request, response) => response.sendFile('index.html', {root: '.'})
 loadDB();
 request.get(nasaURL)
 .then(res => {
-//  console.log(res.body[0]);
   nasaData = res.body;
-  console.log(res.body.length);
-  //console.log(nasaData);
   nasaData.map(ele => {
-    //console.log(ele);
           client.query(`
             INSERT INTO
             meteors(name, "year", mass, recclass, reclat, reclong)
@@ -41,6 +37,14 @@ request.get(nasaURL)
         })
 }).catch(err => console.error(err));
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
+
+app.get('/meteors/find', (req, res) => {
+  let sql = `SELECT * FROM meteors
+            WHERE ${request.query.field}=$1`
+  client.query(sql, [request.query.val])
+  .then(result => response.send(result.rows))
+  .catch(console.error);
+})
 
 function loadDB(){
   client.query(`
@@ -56,3 +60,11 @@ function loadDB(){
     )`
   )/*.then(loadMeteors)*/.catch(console.error);
 }
+
+app.get('/meteors', (request, response) => {
+  client.query(`
+    SELECT * FROM meteors;
+    `)
+    .then(result => response.send(result.rows))
+    .catch(console.error);
+});
