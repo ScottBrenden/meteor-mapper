@@ -50,8 +50,7 @@
     <!-- <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY"
     ></script> -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places"></script> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places&callback=initAutocomplete"
-            async defer></script>
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places&callback=autoComplete.initAutocomplete"async defer></script>
 
 
 
@@ -59,18 +58,18 @@
 
     <section id="about" class="page"></section>
 
-    <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
-    <script src="scripts/models/meteor.js"></script>
     <script src="scripts/views/mapView.js"></script>
+    <script src="scripts/models/meteor.js"></script>
     <script src="scripts/controllers/mapController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
     <script src="scripts/views/aboutUsData.js"></script>
     <script src="scripts/views/aboutView.js"></script>
     <script type="text/javascript">
-      Meteor.fetchAll(initMap);
+      Meteor.fetchAll(autoComplete.initMap)
     </script>
   </body>
 </html>

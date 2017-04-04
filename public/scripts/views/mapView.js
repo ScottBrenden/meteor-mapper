@@ -1,6 +1,10 @@
 'use strict';
 
-function initAutocomplete() {
+(function(module) {
+
+let autoComplete = {};
+
+autoComplete.initAutocomplete = function() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -33.8688, lng: 151.2195},
     // 47.618217, -122.351832
@@ -63,11 +67,29 @@ markers.push(new google.maps.Marker({
 });
   map.fitBounds(bounds);
 });
+autoComplete.initMap = function() {
+
+  console.log(Meteor.all, 'what is here');
+  let locations = Meteor.all.map(e => {
+    e.reclat = parseInt(e.reclat);
+    e.reclong = parseInt(e.reclong);
+    let newPosition = {lat: e.reclat, lng: e.reclong};
+    new google.maps.Marker({
+      position: newPosition,
+      map: map
+
+    });
+    let infowindow = new google.maps.InfoWindow({
+      content: e.name
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    })
+  })
+};
 }
 
-
-module.initMap = initMap;
-
-function renderMarkers(){
-}
 module.map = map;
+// module.initMap = initMap;
+module.autoComplete = autoComplete;
+})(window);
