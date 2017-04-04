@@ -11,6 +11,7 @@ const nasaURL = 'https://data.nasa.gov/resource/y77d-th95.json';
 //const conString = 'postgres://postgres:potatobabe@localhost:5432/meteors';
 //const conString = 'postgres://postgres:1234@localhost:5432/meteors';
 const conString = 'postgres://postgres:flight19@localhost:5432/meteors';
+// const conString = 'postgres://postgres:1234@localhost:5432/meteors';
 const client = new pg.Client(conString);
 let nasaData = [];
 
@@ -54,3 +55,11 @@ function loadDB(){
     )`
   )/*.then(loadMeteors)*/.catch(console.error);
 }
+
+app.get('/meteors', (request, response) => {
+  client.query(`
+    SELECT * FROM meteors;
+    `)
+    .then(result => response.send(result.rows))
+    .catch(console.error);
+});
