@@ -11,7 +11,7 @@ const nasaURL = 'https://data.nasa.gov/resource/y77d-th95.json';
 //const conString = 'postgres://postgres:potatobabe@localhost:5432/meteors';
 //const conString = 'postgres://postgres:1234@localhost:5432/meteors';
 //const conString = 'postgres://postgres:flight19@localhost:5432/meteors';
-const conString = 'postgres://postgres:1234@localhost:5432/meteors';
+const conString = process.env.DATABASE_URL || 'postgres://postgres:hofbrau@localhost:5432/meteors';
 const client = new pg.Client(conString);
 let nasaData = [];
 
@@ -25,11 +25,8 @@ app.get('/', (request, response) => response.sendFile('index.html', {root: '.'})
 loadDB();
 request.get(nasaURL)
 .then(res => {
-//  console.log(res.body[0]);
   nasaData = res.body;
-  //console.log(nasaData);
   nasaData.map(ele => {
-    //console.log(ele);
           client.query(`
             INSERT INTO
             meteors(name, "year", mass, recclass, reclat, reclong)
@@ -40,6 +37,14 @@ request.get(nasaURL)
         })
 }).catch(err => console.error(err));
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
+
+app.get('/meteors/find', (req, res) => {
+  let sql = `SELECT * FROM meteors
+            WHERE ${request.query.field}=$1`
+  client.query(sql, [request.query.val])
+  .then(result => response.send(result.rows))
+  .catch(console.error);
+})
 
 function loadDB(){
   client.query(`
