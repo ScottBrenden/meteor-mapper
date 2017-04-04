@@ -54,10 +54,17 @@
       google.maps.event.trigger(map, 'resize');
       map.setCenter(center);
     });
-    // var marker = new google.maps.Marker({
-    //   position: uluru,
-    //   map: map
-    // });
+
+    let features = Meteor.all.map(met => {
+      // mLat = parseFloat(meteor.reclat);
+      // mLong = parseFloat(meteor.reclong);
+      let feature = {
+        position: new google.maps.LatLng(parseFloat(met.reclat), parseFloat(met.reclong)),
+        type: 'meteors'
+      }
+    });
+    console.log(features);
+
     let locations = Meteor.all.map(e => {
       e.reclat = parseFloat(e.reclat);
       e.reclong = parseFloat(e.reclong);
@@ -66,12 +73,15 @@
       position: newPosition,
       map: map
     });
-      let infowindow = new google.maps.InfoWindow({
-        content: e.name
-      });
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      })
+
+
+
+    let infowindow = new google.maps.InfoWindow({
+      content: e.name
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    })
   });
 
 
