@@ -19,6 +19,7 @@ Meteor.fetchAll = callback => {
   )
 };
 
+
 Meteor.findWhere = (field, value, callback) => {
   $.get('/meteors/find', {field: field, val: value})
   .then(callback)
