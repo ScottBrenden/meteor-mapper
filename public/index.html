@@ -27,34 +27,34 @@
 
     <h1>Meteor Mapper</h1>
 
-    <section id="map-filters" class="tab-content">
-      <div>
+    <section id="map-filters" class="page-tab">
+      <div id="filter-div">
         <ul id="filters">
           <!-- <li> -->
             <select id="filter-one">
               <option value="">-- Filter by Decade --</option>
-              <option class='date' value="1800">-- 1800s --</option>
-              <option class='date' value="1810">-- 1810s --</option>
-              <option class='date' value="1820">-- 1820s --</option>
-              <option class='date' value="1830">-- 1830s --</option>
-              <option class='date' value="1840">-- 1840s --</option>
-              <option class='date' value="1850">-- 1850s --</option>
-              <option class='date' value="1860">-- 1860s --</option>
-              <option class='date' value="1870">-- 1870s --</option>
-              <option class='date' value="1880">-- 1880s --</option>
-              <option class='date' value="1890">-- 1890s --</option>
-              <option class='date' value="1900">-- 1900s --</option>
-              <option class='date' value="1910">-- 1910s --</option>
-              <option class='date' value="1920">-- 1920s --</option>
-              <option class='date' value="1930">-- 1930s --</option>
-              <option class='date' value="1940">-- 1940s --</option>
-              <option class='date' value="1950">-- 1950s --</option>
-              <option class='date' value="1960">-- 1960s --</option>
-              <option class='date' value="1970">-- 1970s --</option>
-              <option class='date' value="1980">-- 1980s --</option>
-              <option class='date' value="1990">-- 1990s --</option>
-              <option class='date' value="2000">-- 2000s --</option>
-              <option class='date' value="2010">-- 2010s --</option>
+              <option class='date' value="1800"> 1800s </option>
+              <option class='date' value="1810"> 1810s </option>
+              <option class='date' value="1820"> 1820s </option>
+              <option class='date' value="1830"> 1830s </option>
+              <option class='date' value="1840"> 1840s </option>
+              <option class='date' value="1850"> 1850s </option>
+              <option class='date' value="1860"> 1860s </option>
+              <option class='date' value="1870"> 1870s </option>
+              <option class='date' value="1880"> 1880s </option>
+              <option class='date' value="1890"> 1890s </option>
+              <option class='date' value="1900"> 1900s </option>
+              <option class='date' value="1910"> 1910s </option>
+              <option class='date' value="1920"> 1920s </option>
+              <option class='date' value="1930"> 1930s </option>
+              <option class='date' value="1940"> 1940s </option>
+              <option class='date' value="1950"> 1950s </option>
+              <option class='date' value="1960"> 1960s </option>
+              <option class='date' value="1970"> 1970s </option>
+              <option class='date' value="1980"> 1980s </option>
+              <option class='date' value="1990"> 1990s </option>
+              <option class='date' value="2000"> 2000s </option>
+              <option class='date' value="2010"> 2010s </option>
             </select>
           <!-- </li>
           <li> -->
@@ -64,23 +64,17 @@
           <!-- </li> -->
         </ul>
       </div>
+      <div id="map"></div>
+
+      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+      <script src="scripts/views/mapView.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places"></script>
+      <button id="chart">Chart Data</button>
+      <a href="/about" class="button">About</a>
     </section>
+    <section id="about" class="page-tab">
 
-    <div id="map"></div>
-
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <script src="scripts/views/mapView.js"></script>
-
-    <!-- <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY"
-    ></script> -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places"></script> -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places"></script>
-
-
-
-    <button id="chart">Chart Data</button>
-
-    <section id="about" class="page"></section>
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -89,6 +83,7 @@
     <script src="scripts/models/map.js"></script>
     <script src="scripts/models/meteor.js"></script>
     <script src="scripts/controllers/mapController.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
     <script src="scripts/views/aboutUsData.js"></script>
     <script src="scripts/views/aboutView.js"></script>
