@@ -8,7 +8,6 @@
   autoComplete.initAutocomplete = function() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 39.0997, lng: -94.5786},
-      // 47.618217, -122.351832
       zoom: 4,
       mapTypeId: 'roadmap'
     });
@@ -85,12 +84,7 @@
         })
       })
     });
-    // autoComplete.initMap = function() {
-    //   console.log('init map');
     };
 
-
-  // module.map = map;
-  // module.initMap = initMap;
   module.autoComplete = autoComplete;
 })(window);
