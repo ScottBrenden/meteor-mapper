@@ -9,19 +9,15 @@ Meteor.loadAll = data => {
   data.map(ele => Meteor.all.push(new Meteor(ele)));
 };
 
-Meteor.fetchAll = function() {
+Meteor.fetchAll = callback => {
   $.get('/meteors')
-  .then(results => {
+  .then(
+    results => {
       Meteor.loadAll(results);
-    })
-  };
-  // .then();
-    // console.log(autoComplete.initMap);
-    // console.log('line 19');
-    // //autoComplete.initMap();
-    // // callback &&
-    // callback();
-
+      callback();
+    }
+  )
+};
 
 Meteor.findWhere = (field, value, callback) => {
   $.get('/meteors/find', {field: field, val: value})
