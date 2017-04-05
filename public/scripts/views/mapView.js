@@ -1,11 +1,8 @@
 'use strict';
 
-(function(module) {
+// (function(module) {
 
-  let autoComplete = {};
-
-
-  autoComplete.initAutocomplete = function() {
+ function initAutocomplete() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 39.0997, lng: -94.5786},
       zoom: 4,
@@ -84,7 +81,4 @@
         })
       })
     });
-    };
-
-  module.autoComplete = autoComplete;
-})(window);
+  };
