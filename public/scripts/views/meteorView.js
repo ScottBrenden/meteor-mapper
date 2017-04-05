@@ -2,6 +2,7 @@
 // (function(module) {
 const meteorView = {};
 
+
 meteorView.handleDecadeFilter = callback => {
 $('#filter-one').on('change', function() {
   if (this.value){

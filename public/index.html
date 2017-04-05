@@ -7,11 +7,12 @@
     <link rel="icon" href="images/meteor-impact.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="vendor/styles/normalize.css">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
-    <link href="https://fonts.googleapis.com/css?family=Revalia" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Revalia|Source+Sans+Pro" rel="stylesheet">
 
     <script id="about-template" type="text/x-handlebars-template">
       <article>
@@ -27,7 +28,14 @@
 
     <h1>Meteor Mapper</h1>
 
+
+    <div id=intro>
+      <p>Use the filters to filter meteor landings by decade or size and use the search bar to find a specific location.</p>
+    </div>
+
+
     <section id="map-filters" class="page-tab">
+
       <div id="filter-div">
         <ul id="filters">
           <!-- <li> -->
@@ -79,13 +87,13 @@
       <a href="/about" class="button">About</a>
     </section>
     <section id="about" class="page-tab">
-
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
     <script src="/vendor/scripts/page.js"></script>
+    <script src="scripts/views/meteorView.js"></script>
     <script src="scripts/models/map.js"></script>
     <script src="scripts/models/meteor.js"></script>
     <script src="scripts/controllers/mapController.js"></script>
@@ -93,6 +101,5 @@
     <script src="scripts/controllers/routes.js"></script>
     <script src="scripts/views/aboutUsData.js"></script>
     <script src="scripts/views/aboutView.js"></script>
-    <script src="scripts/views/meteorView.js"></script>
   </body>
 </html>

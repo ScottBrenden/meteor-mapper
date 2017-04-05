@@ -1,0 +1,36 @@
+#intro {
+  margin-top: 5%;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#filter-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-top: 2em;*/
+  }
+
+#chart {
+  margin-left: 60%;
+}
+@media only screen and (min-width: 650px) {
+  #intro {
+    margin-top: 5%;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.4em;
+  }
+  #map-filters {
+    margin-top: 8%;
+  }
+  #filter-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin-top: 20%;*/
+  }
+  #chart {
+    margin-left: 80%;
+  }
+}
