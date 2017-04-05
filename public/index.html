@@ -30,7 +30,21 @@
         <ul id="filters">
           <li>
             <select id="filter-one">
-              <option value="">-- Filter by Year --</option>
+              <option value="">-- Filter by Decade --</option>
+              <option class='date' value="1900">-- 1900s --</option>
+              <option class='date' value="1880">-- 1880s --</option>
+              <option class='date' value="1890">-- 1890s --</option>
+              <option class='date' value="1910">-- 1910s --</option>
+              <option class='date' value="1920">-- 1920s --</option>
+              <option class='date' value="1930">-- 1930s --</option>
+              <option class='date' value="1940">-- 1940s --</option>
+              <option class='date' value="1950">-- 1950s --</option>
+              <option class='date' value="1960">-- 1960s --</option>
+              <option class='date' value="1970">-- 1970s --</option>
+              <option class='date' value="1980">-- 1980s --</option>
+              <option class='date' value="1990">-- 1990s --</option>
+              <option class='date' value="2000">-- 2000s --</option>
+              <option class='date' value="2010">-- 2010s --</option>
             </select>
           </li>
           <li>
@@ -70,8 +84,6 @@
     <script src="scripts/controllers/routes.js"></script>
     <script src="scripts/views/aboutUsData.js"></script>
     <script src="scripts/views/aboutView.js"></script>
-    <script type="text/javascript">
-      Meteor.fetchAll(autoComplete.initMap)
-    </script>
+    <script src="scripts/views/meteorView.js"></script>
   </body>
 </html>
