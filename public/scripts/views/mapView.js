@@ -73,6 +73,7 @@
         let newPosition = {lat: e.reclat, lng: e.reclong};
         let marker = new google.maps.Marker({
           position: newPosition,
+          icon: 'images/marker31x50.png',
           map: map
         });
         let infowindow = new google.maps.InfoWindow({
