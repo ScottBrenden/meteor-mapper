@@ -16,4 +16,4 @@ $('#filter-one').on('change', function() {
 });
 
 };
-meteorView.handleDecadeFilter(initAutocomplete);
+meteorView.handleDecadeFilter(initMarkers);

@@ -1,4 +1,4 @@
 'use strict';
 
-page('/', Meteor.fetchAll(initAutocomplete));
+page('/', Meteor.fetchAll(initMarkers));
 page();
