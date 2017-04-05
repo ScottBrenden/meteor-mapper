@@ -12,7 +12,7 @@ $('#filter-one').on('change', function() {
     callback();
   });
 } else {
-  Meteor.fetchAll(initMarkers);
+  meteorView.fetchAll(initMarkers);
 }
 });
 
@@ -46,9 +46,19 @@ meteorView.handleMassFilter = callback =>{
         callback();
       });
     } else {
-      Meteor.fetchAll(initMarkers);
+      meteorView.fetchAll(initMarkers);
     }
   });
 };
+meteorView.fetchAll = callback => {
+  $.get('/meteors')
+  .then(
+    results => {
+      Meteor.loadAll(results);
+      callback();
+    }
+  )
+};
+
 meteorView.handleDecadeFilter(initMarkers);
 meteorView.handleMassFilter(initMarkers);

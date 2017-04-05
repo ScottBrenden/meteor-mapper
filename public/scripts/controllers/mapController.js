@@ -4,7 +4,7 @@
   const mapController = {};
 
   mapController.init = () => {
-    Meteor.fetchAll(initMarkers);
+    meteorView.fetchAll(initMarkers);
     $('#filter-one').val('');
     $('#filter-two').val('');
     $('#about').hide();
