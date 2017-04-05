@@ -8,6 +8,24 @@
       zoom: 4,
       mapTypeId: 'roadmap'
     });
+
+    let locations = Meteor.all.map(e => {
+      e.reclat = parseFloat(e.reclat);
+      e.reclong = parseFloat(e.reclong);
+      let newPosition = {lat: e.reclat, lng: e.reclong};
+      let marker = new google.maps.Marker({
+        position: newPosition,
+        icon: 'images/marker31x50.png',
+        map: map
+      });
+      let infowindow = new google.maps.InfoWindow({
+        content: e.name
+      });
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      })
+    })
+
     // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
@@ -50,21 +68,5 @@
       });
       map.fitBounds(bounds);
 
-      let locations = Meteor.all.map(e => {
-        e.reclat = parseFloat(e.reclat);
-        e.reclong = parseFloat(e.reclong);
-        let newPosition = {lat: e.reclat, lng: e.reclong};
-        let marker = new google.maps.Marker({
-          position: newPosition,
-          icon: 'images/marker31x50.png',
-          map: map
-        });
-        let infowindow = new google.maps.InfoWindow({
-          content: e.name
-        });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        })
-      })
     });
   };
