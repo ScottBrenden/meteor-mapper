@@ -2,6 +2,7 @@
 // (function(module) {
 const meteorView = {};
 
+
 meteorView.handleDecadeFilter = callback => {
 $('#filter-one').on('change', function() {
   $.ajax({url: '/meteors/find', method:'GET', headers: {val: this.value + '-01-01', val2: parseInt(this.value) + 10 + '-01-01'}})

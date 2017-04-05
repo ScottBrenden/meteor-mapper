@@ -1,0 +1,21 @@
+#filter-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  }
+
+#chart {
+  margin-left: 60%;
+}
+@media only screen and (min-width: 650px) {
+  #filter-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin-top: 20%;*/
+  }
+  #chart {
+    margin-left: 80%;
+  }
+}
