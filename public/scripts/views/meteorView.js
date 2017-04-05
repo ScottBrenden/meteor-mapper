@@ -17,6 +17,7 @@ $('#filter-one').on('change', function() {
 });
 
 };
+
 meteorView.handleMassFilter = callback =>{
   $('#filter-two').on('change', function(){
     if (this.value){
