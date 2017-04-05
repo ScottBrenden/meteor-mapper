@@ -7,9 +7,8 @@
 
   autoComplete.initAutocomplete = function() {
     var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -33.8688, lng: 151.2195},
-      // 47.618217, -122.351832
-      zoom: 13,
+      center: {lat: 39.0997, lng: -94.5786},
+      zoom: 4,
       mapTypeId: 'roadmap'
     });
     // Create the search box and link it to the UI element.
@@ -69,8 +68,8 @@
       map.fitBounds(bounds);
 
       let locations = Meteor.all.map(e => {
-        e.reclat = parseInt(e.reclat);
-        e.reclong = parseInt(e.reclong);
+        e.reclat = parseFloat(e.reclat);
+        e.reclong = parseFloat(e.reclong);
         let newPosition = {lat: e.reclat, lng: e.reclong};
         let marker = new google.maps.Marker({
           position: newPosition,
@@ -84,12 +83,7 @@
         })
       })
     });
-    // autoComplete.initMap = function() {
-    //   console.log('init map');
     };
 
-
-  // module.map = map;
-  // module.initMap = initMap;
   module.autoComplete = autoComplete;
 })(window);

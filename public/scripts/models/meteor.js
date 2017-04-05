@@ -15,13 +15,6 @@ Meteor.fetchAll = function() {
       Meteor.loadAll(results);
     })
   };
-  // .then();
-    // console.log(autoComplete.initMap);
-    // console.log('line 19');
-    // //autoComplete.initMap();
-    // // callback &&
-    // callback();
-
 
 Meteor.findWhere = (field, value, callback) => {
   $.get('/meteors/find', {field: field, val: value})
