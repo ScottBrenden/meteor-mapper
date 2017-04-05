@@ -10,14 +10,16 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link href="https://fonts.googleapis.com/css?family=Revalia|Source+Sans+Pro" rel="stylesheet">
 
     <script id="about-template" type="text/x-handlebars-template">
-      <article>
+      <article class="prof">
         <header class="name">
           <h3>{{{name}}}</h3>
+          <div class="prof-pic" style="background-image: url({{img}});"></div>
         </header>
         <section class="about-us">{{{about}}}</section>
       </article>
@@ -87,7 +89,9 @@
       <button id="chart">Chart Data</button>
       <a href="/about" class="button">About</a>
     </section>
-    <section id="about" class="page-tab">
+    <section id="about-page" class="page-tab">
+      <a href="/" class="button">Home</a>
+      <div id="about"></div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

@@ -4,7 +4,8 @@ let aboutUs = [];
 
 function Us (opts) {
   this.name = opts.name,
-  this.about = opts.about;
+  this.about = opts.about,
+  this.img = opts.img;
 };
 
 Us.prototype.toHtml = function() {
@@ -21,4 +22,4 @@ aboutUs.forEach(function(stillUs){
   $('#about').append(stillUs.toHtml());
 });
 
-$('#about').append(`<a href="/" class="button">Home</a>`);
+// $('#about').append(`<a href="/" class="button">Home</a>`);

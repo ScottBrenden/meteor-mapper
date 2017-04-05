@@ -9,7 +9,7 @@ const aboutUsData = [
   {
     name:'Scott',
     about:'blah blah blah',
-    img: ''
+    img: '/images/scott_holder.jpg'
   },
   {
     name:'Kurt',
