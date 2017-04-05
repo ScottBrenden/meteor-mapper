@@ -4,11 +4,10 @@
   const mapController = {};
 
   mapController.init = () => {
+    console.log('in mapController');
     Meteor.fetchAll(initAutocomplete);
-    console.log('in mapctrl init');
     $('#about').hide();
     $('#map-ilters').fadeIn('fast');
-    console.log('end mapctrl init');
   };
 
   module.mapController = mapController;
