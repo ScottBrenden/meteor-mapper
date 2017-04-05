@@ -8,9 +8,11 @@ const app = express();
 
 const request = require('superagent');
 const nasaURL = 'https://data.nasa.gov/resource/y77d-th95.json';
-// const conString = 'postgres://postgres:potatobabe@localhost:5432/meteors';
+
+const conString = 'postgres://postgres:potatobabe@localhost:5432/meteors';
 //const conString = 'postgres://postgres:1234@localhost:5432/meteors';
-const conString = 'postgres://postgres:flight19@localhost:5432/meteors';
+// const conString = 'postgres://postgres:flight19@localhost:5432/meteors';
+//const conString = 'postgres://postgres:1234@localhost:5432/meteors';
 // const conString = process.env.DATABASE_URL || 'postgres://postgres:hofbrau@localhost:5432/meteors';
 
 const client = new pg.Client(conString);
@@ -46,13 +48,22 @@ function loadMeteors(){
 };
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
 
-app.get('/meteors/find', (req, res) => {
-  let sql = `SELECT * FROM meteors
-            WHERE ${request.query.field}=$1`
-  client.query(sql, [request.query.val])
+app.get('/meteors/find', (req, response) => {
+  console.log(req.headers);
+  client.query(
+  `SELECT * FROM meteors
+  WHERE "year" >= $1
+  AND "year" <= $2`, [req.headers.val, req.headers.val2])
   .then(result => response.send(result.rows))
   .catch(console.error);
 })
+// app.get('/meteors/find', (req, response) => {
+//   client.query(
+//     // `SELECT date_part('year', timestamp '1988-01-01T06:00:00.000Z')`)
+//     `SELECT EXTRACT(DECADE FROM TIMESTAMP $1)`, [])
+//   .then(result => response.send(result.rows))
+//   .catch(console.error);
+// })
 
 function loadDB(){
   client.query(`
