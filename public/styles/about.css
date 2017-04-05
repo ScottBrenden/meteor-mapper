@@ -5,10 +5,12 @@
   background-size: cover;
   background-position: center center;
   border-radius: 50%;
+  margin: auto;
 }
 
 .prof{
   width: 20%;
   min-width: 300px;
   display: inline-block;
+  text-align: center;
 }
