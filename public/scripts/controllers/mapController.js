@@ -7,7 +7,7 @@
     console.log('in mapController');
     Meteor.fetchAll(initAutocomplete);
     $('#about').hide();
-    $('#map-ilters').fadeIn('fast');
+    $('#map-filters').fadeIn('fast');
   };
 
   module.mapController = mapController;
