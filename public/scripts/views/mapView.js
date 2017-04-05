@@ -38,7 +38,7 @@ function initMap () {
         marker.setMap(null);
       });
       markers = [];
-      
+
       // For each place, get the icon, name and location.
       var bounds = new google.maps.LatLngBounds();
       places.forEach(function(place) {
@@ -64,6 +64,7 @@ function initMap () {
       e.setMap(null)
     });
 
+    var previousMarker = false;
     locations = Meteor.all.map(e => {
     e.reclat = parseFloat(e.reclat);
     e.reclong = parseFloat(e.reclong);
@@ -76,8 +77,12 @@ function initMap () {
     let infowindow = new google.maps.InfoWindow({
       content: `${e.name}, ${e.mass/1000}kg, ` + parseInt(JSON.stringify(e.year).slice(1, 5))
     });
-    marker.addListener('click', function() {
+    google.maps.event.addListener(marker, 'click', function() {
+      if(previousMarker){
+        previousMarker.close();
+      }
       infowindow.open(map, marker);
+      previousMarker = infowindow;
     })
     marker.setMap(map);
     return marker;

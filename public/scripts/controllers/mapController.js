@@ -7,7 +7,7 @@
     meteorView.fetchAll(initMarkers);
     $('#filter-one').val('');
     $('#filter-two').val('');
-    $('#about').hide();
+    $('#about-page').hide();
     $('#map-filters').fadeIn('fast');
   };
 
