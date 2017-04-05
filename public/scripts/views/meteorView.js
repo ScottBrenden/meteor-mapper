@@ -1,5 +1,4 @@
 'use strict';
-// (function(module) {
 const meteorView = {};
 
 
@@ -13,7 +12,7 @@ $('#filter-one').on('change', function() {
     callback();
   });
 } else {
-  Meteor.fetchAll(initAutocomplete);
+  Meteor.fetchAll(initMarkers);
 }
 });
 
@@ -33,6 +32,10 @@ meteorView.handleMassFilter = callback =>{
           break;
         case 'big':
           var valueOne = 10000;
+          var valueTwo = 100000;
+          break;
+        case 'huge':
+          var valueOne = 100000;
           var valueTwo = 10000000000;
           break;
       }
@@ -43,9 +46,9 @@ meteorView.handleMassFilter = callback =>{
         callback();
       });
     } else {
-      Meteor.fetchAll(initAutocomplete);
+      Meteor.fetchAll(initMarkers);
     }
   });
 };
-meteorView.handleDecadeFilter(initAutocomplete);
-meteorView.handleMassFilter(initAutocomplete);
+meteorView.handleDecadeFilter(initMarkers);
+meteorView.handleMassFilter(initMarkers);

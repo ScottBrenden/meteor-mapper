@@ -4,7 +4,9 @@
   const mapController = {};
 
   mapController.init = () => {
-    Meteor.fetchAll(initAutocomplete);
+    Meteor.fetchAll(initMarkers);
+    $('#filter-one').val('');
+    $('#filter-two').val('');
     $('#about').hide();
     $('#map-filters').fadeIn('fast');
   };
