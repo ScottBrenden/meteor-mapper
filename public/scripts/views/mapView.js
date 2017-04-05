@@ -8,6 +8,24 @@
       zoom: 4,
       mapTypeId: 'roadmap'
     });
+
+    let locations = Meteor.all.map(e => {
+      e.reclat = parseFloat(e.reclat);
+      e.reclong = parseFloat(e.reclong);
+      let newPosition = {lat: e.reclat, lng: e.reclong};
+      let marker = new google.maps.Marker({
+        position: newPosition,
+        icon: 'images/marker31x50.png',
+        map: map
+      });
+      let infowindow = new google.maps.InfoWindow({
+        content: e.name
+      });
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      })
+    })
+
     // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
@@ -40,21 +58,7 @@
           console.log("Returned place contains no geometry");
           return;
         }
-        var icon = {
-          url: place.icon,
-          size: new google.maps.Size(71, 71),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(25, 25)
-        };
 
-        // Create a marker for each place.
-        markers.push(new google.maps.Marker({
-          map: map,
-          icon: icon,
-          title: place.name,
-          position: place.geometry.location
-        }));
         if (place.geometry.viewport) {
           // Only geocodes have viewport.
           bounds.union(place.geometry.viewport);
@@ -64,21 +68,5 @@
       });
       map.fitBounds(bounds);
 
-      let locations = Meteor.all.map(e => {
-        e.reclat = parseFloat(e.reclat);
-        e.reclong = parseFloat(e.reclong);
-        let newPosition = {lat: e.reclat, lng: e.reclong};
-        let marker = new google.maps.Marker({
-          position: newPosition,
-          icon: 'images/marker31x50.png',
-          map: map
-        });
-        let infowindow = new google.maps.InfoWindow({
-          content: e.name
-        });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        })
-      })
     });
   };
