@@ -1,5 +1,4 @@
 'use strict';
-// (function(module) {
 const meteorView = {};
 
 
@@ -33,6 +32,10 @@ meteorView.handleMassFilter = callback =>{
           break;
         case 'big':
           var valueOne = 10000;
+          var valueTwo = 100000;
+          break;
+        case 'huge':
+          var valueOne = 100000;
           var valueTwo = 10000000000;
           break;
       }

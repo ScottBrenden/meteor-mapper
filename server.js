@@ -10,7 +10,8 @@ const request = require('superagent');
 const nasaURL = 'https://data.nasa.gov/resource/y77d-th95.json';
 
 // const conString = 'postgres://postgres:potatobabe@localhost:5432/meteors';
-// const conString = 'postgres://postgres:1234@localhost:5432/meteors';
+const conString = 'postgres://postgres:1234@localhost:5432/meteors';
+
 // const conString = 'postgres://postgres:flight19@localhost:5432/meteors';
 //const conString = 'postgres://postgres:1234@localhost:5432/meteors';
 const conString = process.env.DATABASE_URL || 'postgres://postgres:hofbrau@localhost:5432/meteors';
@@ -49,7 +50,6 @@ function loadMeteors(){
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
 //
 app.get('/meteors/decade', (req, response) => {
-  console.log(req.headers);
   client.query(
   `SELECT * FROM meteors
   WHERE "year" >= $1
@@ -59,7 +59,6 @@ app.get('/meteors/decade', (req, response) => {
 })
 app.get('/meteors/mass', (req, response) => {
   client.query(
-    // `SELECT date_part('year', timestamp '1988-01-01T06:00:00.000Z')`)
     `SELECT * FROM meteors
     WHERE mass >= $1
     AND mass < $2`, [req.headers.val, req.headers.val2])
