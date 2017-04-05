@@ -20,3 +20,5 @@ aboutUsData.forEach(function(personObject) {
 aboutUs.forEach(function(stillUs){
   $('#about').append(stillUs.toHtml());
 });
+
+$('#about').append(`<a href="/" class="button">Home</a>`);

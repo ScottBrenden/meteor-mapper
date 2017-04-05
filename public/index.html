@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
-    <link href="https://fonts.googleapis.com/css?family=Revalia" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Revalia|Source+Sans+Pro" rel="stylesheet">
 
     <script id="about-template" type="text/x-handlebars-template">
       <article>
@@ -27,6 +27,10 @@
   <body>
 
     <h1>Meteor Mapper</h1>
+
+    <div id=intro>
+      <p>Use the filters to filter meteor landings by decade or size and use the search bar to find a specific location.</p>
+    </div>
 
     <section id="map-filters" class="tab-content">
       <div id="filter-div">
@@ -65,18 +69,17 @@
           <!-- </li> -->
         </ul>
       </div>
+
+      <div id="map"></div>
+
+      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+      <script src="scripts/views/mapView.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places"></script>
+      <button id="chart">Chart Data</button>
+      <a href="/about" class="button">About</a>
     </section>
-
-    <div id="map"></div>
-
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <script src="scripts/views/mapView.js"></script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places"></script>
-
-    <button id="chart">Chart Data</button>
-
-    <section id="about" class="page"></section>
+    <section id="about" class="page-tab">
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -86,6 +89,7 @@
     <script src="scripts/models/map.js"></script>
     <script src="scripts/models/meteor.js"></script>
     <script src="scripts/controllers/mapController.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
     <script src="scripts/views/aboutUsData.js"></script>
     <script src="scripts/views/aboutView.js"></script>
