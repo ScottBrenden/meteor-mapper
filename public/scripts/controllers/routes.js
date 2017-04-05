@@ -1,5 +1,5 @@
 'use strict';
 
-page('/', Meteor.fetchAll(initAutocomplete));
-page('/about', aboutController.index);
+page('/', mapController.init);
+page('/about', aboutController.init);
 page();

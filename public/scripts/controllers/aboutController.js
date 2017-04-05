@@ -3,7 +3,7 @@
 (function(module) {
   const aboutController = {};
 
-  aboutController.index = () => {
+  aboutController.init = () => {
     $('.page-tab').hide();
     $('#about').fadeIn('fast');
   };
