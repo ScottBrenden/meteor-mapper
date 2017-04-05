@@ -6,6 +6,7 @@ function Meteor(opts) {
 Meteor.all = [];
 
 Meteor.loadAll = data => {
+  Meteor.all = [];
   data.map(ele => Meteor.all.push(new Meteor(ele)));
 };
 
