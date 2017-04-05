@@ -6,7 +6,7 @@
   mapController.init = () => {
     Meteor.fetchAll(initAutocomplete);
     $('#about').hide();
-    $('#map-ilters').fadeIn('fast');
+    $('#map-filters').fadeIn('fast');
   };
 
   module.mapController = mapController;
