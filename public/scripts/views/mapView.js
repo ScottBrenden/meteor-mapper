@@ -88,9 +88,6 @@
     //   console.log('init map');
     };
 
-  
-
-
 
   // module.map = map;
   // module.initMap = initMap;
