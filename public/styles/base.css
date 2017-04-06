@@ -1,15 +1,37 @@
 body {
-  background-image: url(http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg);
+  background-color: #370408;
+  /*background-image: url('http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg');
+  background-image: url('/images/meteor.svg');
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top center;*/
 }
+
 h1{
   font-family: 'Revalia', cursive;
-  font-size:4em;
-  color: #424E60;
+  font-size:50px;
+  color: #fff;
+  /*color: #424E60;*/
   text-align: center;
   /*background-image: url(http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg);*/
 }
+
+header{
+  background-image: url('http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg');
+  /*background-image: url('/images/meteor.svg');*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  /*width: 30px;*/
+  margin: auto;
+}
+
+#meteor-img{
+  height: 210px;
+}
+
+#intro{
+  color: #fff;
+}
+
 #filters {
   display: flex;
 }
@@ -36,10 +58,6 @@ a{
   transition-duration: .2s;
   background-color: #370408;
   color: #dc7600;
-}
-
-#map-filters {
-  margin-top: 15%;
 }
 
 .map-box{
@@ -76,4 +94,5 @@ button:hover{
 footer{
   padding: 10px 0;
   text-align: center;
+  clear:both;
 }

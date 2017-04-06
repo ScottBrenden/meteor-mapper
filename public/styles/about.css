@@ -1,9 +1,4 @@
 
-#about-page{
-  background-color: #370408;
-
-}
-
 #about{
   margin-top: 10px;
 }
@@ -14,7 +9,8 @@ margin-top: -100px;
 }
 
 .name{
-  color: #370408;
+  color: #000;
+  background-color: #370408;
   font-weight: bolder;
   font-family: 'Revalia', cursive;
 }
@@ -35,7 +31,6 @@ margin-top: -100px;
   min-width: 300px;
   margin: 5px 0 0 5px;
   display: inline-block;
-  /*position: absolute;*/
   float: left;
   text-align: center;
   z-index: 99;
