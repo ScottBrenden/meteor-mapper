@@ -18,7 +18,7 @@ const aboutUsData = [
   },
   {
     name:'Erik',
-    about:'blah blah blah',
-    img: ''
+    about:'Erik Enderlein was born and raised in Seattle,WA and has been coding for about half a year. On his free time he works on game design. His interests include ancient cultures and board game design. He\'s hoping to go into backend software devolpment.',
+    img: '/images/erik.jpg'
   }
 ];
