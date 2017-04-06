@@ -1,7 +1,7 @@
 body {
-  background-image: url(http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg);
+  /*background-image: url(http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg);
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top center;*/
 }
 h1{
   font-family: 'Revalia', cursive;
@@ -14,11 +14,25 @@ h1{
   display: flex;
 }
 
-a.button {
-  background-color: #bbb;
+a{
+  text-decoration: none;
+}
+
+.nav-button {
+  text-decoration: none;
+  background-color: #cd7600;
   padding: 10px;
   margin: 10px;
+  color: #370408;
+  border-radius: 2px;
 }
+.nav-button:hover{
+  transform: scale(1.2);
+  transition-duration: .2s;
+  background-color: #370408;
+  color: #dc7600;
+}
+
 #map-filters {
   margin-top: 15%;
 }

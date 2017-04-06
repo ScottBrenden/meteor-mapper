@@ -21,8 +21,8 @@
       <article class="prof">
         <header class="name">
           <h3>{{{name}}}</h3>
-          <div class="prof-pic" style="background-image: url({{img}});"></div>
         </header>
+        <div class="prof-pic" style="background-image: url({{img}});"></div>
         <section class="about-us">{{{about}}}</section>
       </article>
     </script>
@@ -30,21 +30,19 @@
   </head>
   <body>
 
-    <h1>Meteor Mapper</h1>
-
-
-    <div id="intro">
-      <p>Use the filters to filter meteor landings by decade or size and use the search bar to find a specific location.</p>
-    </div>
+    <h1>Metroid Mapper</h1>
 
     <section id="map-filters" class="page-tab">
+      <div id="intro">
+        <p>Use the filters to filter meteor landings by decade or size and use the search bar to find a specific location.</p>
+      </div>
 
       <div id="filter-div">
         <ul id="filters">
           <!-- <li> -->
             <select id="filter-one" class="chosen">
-              <option></option>
               <option selected value="default">Filter by Decade</option>
+              <!-- <option></option> -->
               <option class='date' value="1800">1800s</option>
               <option class='date' value="1810">1810s</option>
               <option class='date' value="1820">1820s</option>
@@ -89,10 +87,11 @@
       <script src="scripts/views/mapView.js"></script>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places&callback=initMap"></script>
       <button id="chart">Chart Data</button>
-      <a href="/about" class="button">About</a>
+      <a href="/about" class="nav-button">About</a>
     </section>
     <section id="about-page" class="page-tab">
-      <a href="/" class="button">Home</a>
+      <h1 id="about-title">About</h1>
+      <a href="/" id="home-btn" class="nav-button">Home</a>
       <div id="about"></div>
     </section>
 

@@ -8,7 +8,7 @@ const app = express();
 
 const request = require('superagent');
 
-const nasaURL = 'https://data.nasa.gov/resource/y77d-th95.json?$$app_token=nEby64d7CBdhgHwlQqYAxocCO&$limit=10000';
+const nasaURL = 'https://data.nasa.gov/resource/y77d-th95.json?$$app_token=nEby64d7CBdhgHwlQqYAxocCO&$limit=3000';
 // const nasaURL = `https://data.nasa.gov/resource/y77d-th95.json?$$app_token=${process.env.NASA_TOKEN}&$limit=10000`;
 
 
