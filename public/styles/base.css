@@ -56,8 +56,8 @@ a{
 .btns:hover{
   transform: scale(1.2);
   transition-duration: .2s;
-  background-color: #370408;
-  color: #dc7600;
+  background-color: #fff;
+  color: #370408;
 }
 
 .map-box{
