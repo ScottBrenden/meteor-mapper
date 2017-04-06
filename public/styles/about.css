@@ -1,5 +1,7 @@
-body{
-  /*background-color: #370408;*/
+
+#about-page{
+  background-color: #370408;
+
 }
 
 #about{
@@ -28,7 +30,7 @@ margin-top: -100px;
 }
 
 .prof{
-  width: 24%;
+  width: 24.5%;
   height: 400px;
   min-width: 300px;
   margin: 5px 0 0 5px;

@@ -1,7 +1,7 @@
 body {
-  /*background-image: url(http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg);
+  background-image: url(http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg);
   background-repeat: no-repeat;
-  background-position: top center;*/
+  background-position: top center;
 }
 h1{
   font-family: 'Revalia', cursive;
@@ -14,19 +14,24 @@ h1{
   display: flex;
 }
 
+#map{
+  margin: 0 5px;
+  padding-bottom: 5px;
+}
+
 a{
   text-decoration: none;
 }
 
-.nav-button {
+.btns {
   text-decoration: none;
   background-color: #cd7600;
   padding: 10px;
   margin: 10px;
   color: #370408;
-  border-radius: 2px;
+  border-radius: 5px;
 }
-.nav-button:hover{
+.btns:hover{
   transform: scale(1.2);
   transition-duration: .2s;
   background-color: #370408;
@@ -35,4 +40,40 @@ a{
 
 #map-filters {
   margin-top: 15%;
+}
+
+.map-box{
+  padding: 10px;
+  background-color: #dc7600;
+  border-radius: 10px;
+}
+
+button{
+  text-decoration: none;
+  background-color: #370408;
+  padding: 10px;
+  margin: 10px;
+  color: #dc7600;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+button:hover{
+  background-color: #eee;
+  color: #370408;
+}
+
+.about-center{
+  width:100%;
+  margin: 50px auto 20px auto;
+  text-align: center;
+}
+
+
+#about-btn{
+  margin: auto;
+}
+
+footer{
+  padding: 10px 0;
+  text-align: center;
 }
