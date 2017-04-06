@@ -1,6 +1,6 @@
 'use strict';
-const meteorView = {};
 
+const meteorView = {};
 
 meteorView.handleDecadeFilter = callback => {
 $('#filter-one').on('change', function() {
