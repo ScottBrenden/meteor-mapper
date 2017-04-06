@@ -5,8 +5,7 @@ const meteorView = {};
 meteorView.handleDecadeFilter = callback => {
 $('#filter-one').on('change', function() {
   if (!isNaN(this.value)){
-    console.log(isNaN(this.value));
-    console.log(parseInt(this.value));
+    $('#filter-two').val('default');
   $.ajax({url: '/meteors/decade', method:'GET', headers: {val: this.value + '-01-01', val2: parseInt(this.value) + 10 + '-01-01'}})
   .then(results => {
     Meteor.loadAll(results)
