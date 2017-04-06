@@ -22,27 +22,31 @@
       <article class="prof">
         <header class="name">
           <h3>{{{name}}}</h3>
-          <div class="prof-pic" style="background-image: url({{img}});"></div>
         </header>
+        <div class="prof-pic" style="background-image: url({{img}});"></div>
         <section class="about-us">{{{about}}}</section>
       </article>
     </script>
 
   </head>
   <body>
+    <header>
+      <h1>Meteoroid Mapper</h1>
+      <div id="meteor-img">
 
-    <h1>Meteor Mapper</h1>
-
-
-    <div id="intro">
-      <p>Use the filters to filter meteor landings by decade or size and use the search bar to find a specific location.</p>
-    </div>
+      </div>
+    </header>
 
     <section id="map-filters" class="page-tab">
+      <div id="intro">
+        <p>Use the filters to filter meteor landings by decade or size and use the search bar to find a specific location.</p>
+      </div>
+      <div class="map-box">
+
 
       <div id="filter-div">
         <ul id="filters">
-            <select id="filter-one" class="chosen">
+            <select id="filter-one" class="chosen nice-select">
               <option selected value="default">Filter by Decade</option>
               <option class='date' value="1800">1800s</option>
               <option class='date' value="1810">1810s</option>
@@ -78,24 +82,33 @@
         </ul>
       </div>
 
-      <div id="map"></div>
 
-      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-      <script src="scripts/views/mapView.js"></script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places&callback=initMap"></script>
-      <button id="chart">Chart Data</button>
-      <a href="/about" class="button">About</a>
+        <div id="map"></div>
+
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <script src="scripts/views/mapView.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places&callback=initMap"></script>
+        <button id="chart">Chart Data</button>
+      </div>
+      <div class="about-center">
+        <a href="/about" class="btns" id="about-btn">About</a>
+      </div>
     </section>
     <section id="about-page" class="page-tab">
-      <a href="/" class="button">Home</a>
+      <h1 id="about-title">About</h1>
+      <a href="/" id="home-btn" class="btns">Home</a>
       <div id="about"></div>
     </section>
 
     <div id="canvasHolder">
       <canvas class="chart" id="shown" width="600" height="400"></canvas>
     </div>
+    <footer>
+      &copy; 2017 Code Fellows | 301 Project Week | Meteoroid Mapper
+    </footer>
 
     <script src ='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js'></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.7.0/chosen.jquery.min.js"></script>
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>

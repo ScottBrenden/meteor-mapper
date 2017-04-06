@@ -64,7 +64,7 @@ function initMap () {
       e.setMap(null)
     });
 
-    var previousMarker = false;
+    let previousMarker = false;
     locations = Meteor.all.map(e => {
     e.reclat = parseFloat(e.reclat);
     e.reclong = parseFloat(e.reclong);
