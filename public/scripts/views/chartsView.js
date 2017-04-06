@@ -48,7 +48,7 @@ function createChart(dataType, title, labelType){
       datasets: [{
         label: title,
         data: dataType,
-        backgroundColor: 'red',
+        backgroundColor: 'grey',
       }],
     },
     options: {
