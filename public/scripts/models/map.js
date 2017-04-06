@@ -1,2 +1,11 @@
 'use strict';
-$('filter-one').chosen(allow_single_deselect: true);
+
+// $(document).ready(function() {
+//   $('.chosen').chosen(allow_single_deselect: true);
+// })
+//
+// $element['.chosen'] = TRUE;
+
+$(document).ready(function(){
+  $('.chosen').niceSelect();
+})
