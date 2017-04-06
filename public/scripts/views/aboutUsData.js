@@ -13,8 +13,8 @@ const aboutUsData = [
   },
   {
     name:'Kurt',
-    about:'blah blah blah',
-    img: ''
+    about:'Kurt roots for the Florida Gators, loves Seattle, and enjoys coding. He intends to wax Pythonic in the upcoming 401 class in May.',
+    img: '/images/Kurt-image.jpg'
   },
   {
     name:'Erik',
