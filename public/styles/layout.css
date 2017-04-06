@@ -54,7 +54,9 @@
  margin-left: 12px;
  padding: 0 11px 0 13px;
  text-overflow: ellipsis;
- width: 400px;
+ width: 50%;
+ height: 27px;
+ top: 9px !important;
 }
 
 #pac-input:focus {

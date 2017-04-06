@@ -1,11 +1,12 @@
 'use strict';
-const meteorView = {};
 
+const meteorView = {};
 
 meteorView.handleDecadeFilter = callback => {
 $('#filter-one').on('change', function() {
-  if (this.value){
-  $('#filter-two').val('default');
+  if (!isNaN(this.value)){
+    console.log(isNaN(this.value));
+    console.log(parseInt(this.value));
   $.ajax({url: '/meteors/decade', method:'GET', headers: {val: this.value + '-01-01', val2: parseInt(this.value) + 10 + '-01-01'}})
   .then(results => {
     Meteor.loadAll(results)
@@ -20,7 +21,6 @@ $('#filter-one').on('change', function() {
 
 meteorView.handleMassFilter = callback =>{
   $('#filter-two').on('change', function(){
-    if (this.value){
       switch(this.value){
         case 'small':
           var valueOne = 0;
@@ -38,16 +38,15 @@ meteorView.handleMassFilter = callback =>{
           var valueOne = 100000;
           var valueTwo = 10000000000;
           break;
-      }
+        default:
+          return meteorView.fetchAll(initMarkers);
+      };
       $('#filter-one').val('default');
       $.ajax({url: '/meteors/mass', method: 'GET', headers: {val: valueOne, val2: valueTwo}})
       .then(results => {
         Meteor.loadAll(results);
         callback();
       });
-    } else {
-      meteorView.fetchAll(initMarkers);
-    }
   });
 };
 meteorView.fetchAll = callback => {
