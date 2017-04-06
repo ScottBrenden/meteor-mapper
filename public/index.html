@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="vendor/jquery-nice-select-1.1.0/css/nice-select.css">
+    <link rel="stylesheet" href="vendor/jquery-nice-select-1.1.0/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Revalia|Source+Sans+Pro" rel="stylesheet">
 
     <script id="about-template" type="text/x-handlebars-template">
@@ -31,19 +33,18 @@
     <h1>Meteor Mapper</h1>
 
 
-    <div id=intro>
+    <div id="intro">
       <p>Use the filters to filter meteor landings by decade or size and use the search bar to find a specific location.</p>
     </div>
-
 
     <section id="map-filters" class="page-tab">
 
       <div id="filter-div">
         <ul id="filters">
           <!-- <li> -->
-            <select id="filter-one">
-              <option value="">-- Filter by Decade --</option>
-
+            <select id="filter-one" class="chosen">
+              <option></option>
+              <option selected value="default">Filter by Decade</option>
               <option class='date' value="1800">1800s</option>
               <option class='date' value="1810">1810s</option>
               <option class='date' value="1820">1820s</option>
@@ -70,10 +71,11 @@
             </select>
           <!-- </li>
           <li> -->
-            <select id="filter-two">
-              <option value="">-- Filter by Mass --</option>
+
+            <select id="filter-two" class="chosen">
+              <option select value="default">Filter by Mass</option>
               <option class='date' value="huge">huge(100+ kg)</option>
-              <option class='date' value="big">big(10-100 kg)</option>
+              <option class='date' value="big">big(10+ kg)</option>
               <option class='date' value="medium">medium(1-10kg)</option>
               <option class='date' value="small">small(< 1 kg)</option>
             </select>
@@ -95,9 +97,11 @@
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.7.0/chosen.jquery.min.js"></script>
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
-    <script src="/vendor/scripts/page.js"></script>
+    <script src="vendor/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
+    <script src="vendor/scripts/page.js"></script>
     <script src="scripts/views/meteorView.js"></script>
     <script src="scripts/models/meteor.js"></script>
     <script src="scripts/controllers/mapController.js"></script>

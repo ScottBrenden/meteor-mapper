@@ -5,7 +5,7 @@ const meteorView = {};
 meteorView.handleDecadeFilter = callback => {
 $('#filter-one').on('change', function() {
   if (this.value){
-  $('#filter-two').val('');
+  $('#filter-two').val('default');
   $.ajax({url: '/meteors/decade', method:'GET', headers: {val: this.value + '-01-01', val2: parseInt(this.value) + 10 + '-01-01'}})
   .then(results => {
     Meteor.loadAll(results)
@@ -39,7 +39,7 @@ meteorView.handleMassFilter = callback =>{
           var valueTwo = 10000000000;
           break;
       }
-      $('#filter-one').val('');
+      $('#filter-one').val('default');
       $.ajax({url: '/meteors/mass', method: 'GET', headers: {val: valueOne, val2: valueTwo}})
       .then(results => {
         Meteor.loadAll(results);
@@ -59,6 +59,5 @@ meteorView.fetchAll = callback => {
     }
   )
 };
-
 meteorView.handleDecadeFilter(initMarkers);
 meteorView.handleMassFilter(initMarkers);
