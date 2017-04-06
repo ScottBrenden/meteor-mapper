@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="vendor/jquery-nice-select-1.1.0/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Revalia|Source+Sans+Pro" rel="stylesheet">
 
+
     <script id="about-template" type="text/x-handlebars-template">
       <article class="prof">
         <header class="name">
@@ -74,7 +75,6 @@
               <option class='date' value="medium">medium(1-10kg)</option>
               <option class='date' value="small">small(< 1 kg)</option>
             </select>
-
         </ul>
       </div>
 
@@ -91,6 +91,11 @@
       <div id="about"></div>
     </section>
 
+    <div id="canvasHolder">
+      <canvas class="chart" id="shown" width="600" height="400"></canvas>
+    </div>
+
+    <script src ='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.7.0/chosen.jquery.min.js"></script>
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -105,5 +110,6 @@
     <script src="scripts/controllers/routes.js"></script>
     <script src="scripts/views/aboutUsData.js"></script>
     <script src="scripts/views/aboutView.js"></script>
+    <script src="scripts/views/chartsView.js"></script>
   </body>
 </html>
