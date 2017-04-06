@@ -75,7 +75,7 @@ function initMap () {
       map: map
     });
     let infowindow = new google.maps.InfoWindow({
-      content: `${e.name}, ${e.mass/1000}kg, ` + parseInt(JSON.stringify(e.year).slice(1, 5))
+      content: `${e.name}, ${e.mass/1000}kg, ` + String(e.year).slice(0, 4)
     });
     google.maps.event.addListener(marker, 'click', function() {
       if(previousMarker){
