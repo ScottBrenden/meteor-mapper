@@ -52,10 +52,17 @@ function createChart(dataType, title, labelType){
       }],
     },
     options: {
+      legend: {labels:{fontColor:'#fff', fontSize: 18}},
       scales: {
-        yAxis: [{
+        yAxes: [{
           ticks: {
-            beginAtZero: true
+            fontColor:'#fff',
+            beginAtZero:true
+          }
+        }],
+        xAxes:[{
+          ticks: {
+            fontColor:'#fff'
           }
         }]
       }

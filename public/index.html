@@ -86,10 +86,13 @@
 
         <div id="map"></div>
 
-        <input id="pac-input" class="controls" type="text" placeholder="Enter Location">
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         <script src="scripts/views/mapView.js"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_E4yGMoGvpoLZw9fR1PKh6jeV1slJXWY&libraries=places&callback=initMap"></script>
         <button id="chart">Chart Data</button>
+      </div>
+      <div id="canvasHolder">
+        <canvas class="chart" id="shown" width="600" height="400"></canvas>
       </div>
       <div class="about-center">
         <a href="/about" class="btns" id="about-btn">About</a>
@@ -101,9 +104,6 @@
       <div id="about"></div>
     </section>
 
-    <div id="canvasHolder">
-      <canvas class="chart" id="shown" width="600" height="400"></canvas>
-    </div>
     <footer>
       &copy; 2017 Code Fellows | 301 Project Week | Meteorite Mapper
     </footer>
