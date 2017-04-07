@@ -8,8 +8,8 @@ const aboutUsData = [
   },
   {
     name:'Scott',
-    about:'Hello. Zuko here. But I guess you probably already know me. Sort of... Uh so, the thing is... I have a lot of Firebending experience, and I\'m considered to be pretty good at it. Well, you\'ve seen me, you, know, when I was attacking your. Uh, yeah, I guess I should apologize for that. Bu-But anyway, I\'m good now. I mean, I thought I was good before, but now I realize I was bad. But anyway... I think it\'s time I joined your group and taught the Avatar Firebending.',
-    img: '/images/scott_holder.jpg'
+    about:'Hello. Scott Here. After I graduated from Western Washington University I looked for jobs but couldn\'t find anything I could see myself doing as a career. I came to code fellows looking for a new career path. I have taken classes in network and software programing, but web development is what I enjoy.',
+    img: '/images/scott-pic.jpg'
   },
   {
     name:'Kurt',
