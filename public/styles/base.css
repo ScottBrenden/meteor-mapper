@@ -1,26 +1,18 @@
 body {
   background-color: #370408;
-  /*background-image: url('http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg');
-  background-image: url('/images/meteor.svg');
-  background-repeat: no-repeat;
-  background-position: top center;*/
 }
 
 h1{
   font-family: 'Revalia', cursive;
   font-size:50px;
   color: #fff;
-  /*color: #424E60;*/
   text-align: center;
-  /*background-image: url(http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg);*/
 }
 
 #main-head{
   background-image: url('http://www.clker.com/cliparts/x/B/D/p/Y/Q/meteor.svg');
-  /*background-image: url('/images/meteor.svg');*/
   background-repeat: no-repeat;
   background-position: center center;
-  /*width: 30px;*/
   margin: auto;
 }
 

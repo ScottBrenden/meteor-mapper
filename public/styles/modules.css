@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*margin-top: 2em;*/
   }
 
 #chart {
@@ -24,7 +23,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /*margin-top: 20%;*/
   }
   #chart {
     margin-left: 80%;
