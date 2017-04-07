@@ -5,7 +5,8 @@
 
 #home-btn{
 float: right;
-margin-top: -100px;
+margin-top: -55px;
+z-index: 1000;
 }
 
 .name{
