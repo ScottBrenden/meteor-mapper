@@ -38,6 +38,7 @@ meteorView.handleMassFilter = callback =>{
           var valueTwo = 10000000000;
           break;
         default:
+        $('#filter-one').val('default');
           return meteorView.fetchAll(initMarkers);
       };
       $('#filter-one').val('default');
