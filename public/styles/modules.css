@@ -7,8 +7,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*margin-top: 2em;*/
+  padding-top: 20px;
   }
+
+.chosen {
+  margin: 10px;
+}
 
 #chart {
   margin-left: 60%;
@@ -24,7 +28,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /*margin-top: 20%;*/
   }
   #chart {
     margin-left: 80%;
