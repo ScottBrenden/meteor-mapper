@@ -72,3 +72,15 @@
 #target {
   width: 345px;
 }
+
+.chart {
+
+  width: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+    .chart {
+    margin: 0 auto;
+    max-width: 65%;
+  }
+}

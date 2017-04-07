@@ -6,6 +6,7 @@
   aboutController.init = () => {
     $('.page-tab').hide();
     $('#about-page').fadeIn('fast');
+    $('.chart').hide();
   };
 
   module.aboutController = aboutController;
